@@ -1,9 +1,11 @@
+import Carros.CarroDois;
 import Carros.CarroUm;
 import Carros.GeradorDeVelocidade;
 
 public class Pista {
 
-
+    CarroUm carroUm = new CarroUm();
+    CarroDois carroDois = new CarroDois();
     GeradorDeVelocidade geradorDeVelocidade = new GeradorDeVelocidade();
 
     private int distanciaCarroUm;
@@ -36,10 +38,35 @@ public class Pista {
     }
 
 
+    public boolean verificarVencedor(int velocidadeCarroUm, int velocidadeCarroDois) {
+
+    if(velocidadeCarroUm < 30 ) {
+        return true;
+    } if(velocidadeCarroDois < 30 ) {
+        return true;
+        }
+    return false;
+
+
+    }
+    public void ativar(){
+
+        while(verificarVencedor(0, 0)){
+            carroUm.velocidadeCarroUm();
+            carroDois.velocidadeCarroDois();
+
+            setDistanciaCarroUm(carroUm.velocidadeCarroUm());
+            setDistanciaCarroDois(carroDois.velocidadeCarroDois());
+
+        }
+    }
 
     public void frontEnd() {
+        ativar();
 
-        while(true){
+
+
+        while(verificarVencedor(carroUm.velocidadeCarroUm(),carroDois.velocidadeCarroDois())){
             System.out.println("_______________________________");
             for(int i = 0; i < getDistanciaCarroUm(); i++){
 

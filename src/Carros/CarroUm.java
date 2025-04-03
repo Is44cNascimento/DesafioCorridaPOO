@@ -1,16 +1,22 @@
 package Carros;
 
+import java.util.Vector;
+
 public class CarroUm {
+
+    GeradorDeVelocidade gv = new GeradorDeVelocidade();
 
     private int velocidade;
     private String venceu;
     private int distancia;
 
 
-    public CarroUm(int velocidade, String venceu, int distancia) {
+    public CarroUm() {
+    }
+
+    public CarroUm(int velocidade) {
         this.velocidade = velocidade;
-        this.venceu = venceu;
-        this.distancia = distancia;
+
 
 
     }
@@ -39,8 +45,18 @@ public class CarroUm {
         this.distancia = distancia;
     }
 
-    public void calcularDistancia() {
-        setDistancia(getVelocidade() + getDistancia());
+    public int velocidadeCarroUm(){
+
+        int velocidadeCarroUm ;
+
+        while(true){
+            setVelocidade(gv.gerarVelocidadeUm(4));
+            setDistancia(getVelocidade() + getDistancia());
+
+            velocidadeCarroUm = getDistancia();
+            return velocidadeCarroUm;
+        }
+
 
     }
 }
