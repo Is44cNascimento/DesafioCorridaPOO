@@ -19,7 +19,7 @@ public class CarroUm {
     }
 
     public String getVenceu() {
-        return venceu;
+        return this.venceu;
     }
 
     public void setVenceu(String venceu) {
@@ -27,7 +27,7 @@ public class CarroUm {
     }
 
     public int getDistancia() {
-        return distancia;
+        return this.distancia;
     }
 
     public void setDistancia(int distancia) {

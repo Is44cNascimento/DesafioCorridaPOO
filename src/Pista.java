@@ -13,7 +13,7 @@ public class Pista {
     private int distanciaCarroDois;
 
     public int getDistanciaCarroUm() {
-        return distanciaCarroUm;
+        return this.distanciaCarroUm;
     }
 
     public void setDistanciaCarroUm(int distanciaCarroUm) {
@@ -21,7 +21,7 @@ public class Pista {
     }
 
     public int getDistanciaCarroDois() {
-        return distanciaCarroDois;
+        return this.distanciaCarroDois;
     }
 
     public void setDistanciaCarroDois(int distanciaCarroDois) {
@@ -29,45 +29,44 @@ public class Pista {
     }
 
 
-    public boolean parar(){
-        while(true) {
-            if (getDistanciaCarroUm() >= 30) {
-                return true;
-            }
-            if (getDistanciaCarroUm() >= 30) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
 
     public void frontEnd() {
 
-        System.out.println("_______________________________");
-        boolean parar = parar();
+        System.out.println("------------------------------");
+        boolean parar = false;
 
-        while (parar == false) {
+        String tamanhoDaPista="------------------------------";
 
-                carroUm.corridaIniciar();
-                carroDois.corridaIniciar();
+        do{
 
+                    carroUm.corridaIniciar();
+                    carroDois.corridaIniciar();
 
-                System.out.println("_______________________________");
+                System.out.println(tamanhoDaPista);
                 for(int i = 0; i < carroUm.getDistancia(); i++){
 
+                    setDistanciaCarroUm(carroUm.getDistancia());
                     System.out.print(" ");
                 }
                 System.out.println("#");
+
+
+
                 for(int i = 0; i < carroDois.getDistancia(); i++){
                 System.out.print(" ");
+                setDistanciaCarroDois(carroDois.getDistancia());
             }
                 System.out.println("#");
 
-                System.out.println("_______________________________");
-                System.out.println("");
 
-            }
+
+                System.out.println(tamanhoDaPista + "\n");
+
+
+
+
+
+            }while (distanciaCarroDois <= 20 || distanciaCarroUm <= 20);
         }
 
     }
