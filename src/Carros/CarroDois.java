@@ -2,32 +2,23 @@ package Carros;
 
 public class CarroDois {
 
+    GeradorDeVelocidade gv = new GeradorDeVelocidade();
+
     private int velocidade;
     private String venceu;
     private int distancia;
 
-
-    GeradorDeVelocidade gv = new GeradorDeVelocidade();
-
-
-    public CarroDois() {
-    }
-
-    public CarroDois(int velocidade) {
-        this.velocidade = velocidade;
-
-    }
 
     public int getVelocidade() {
         return velocidade;
     }
 
     public void setVelocidade(int velocidade) {
-        this.velocidade = this.velocidade;
+        this.velocidade = velocidade;
     }
 
     public String getVenceu() {
-        return this.venceu;
+        return venceu;
     }
 
     public void setVenceu(String venceu) {
@@ -35,24 +26,20 @@ public class CarroDois {
     }
 
     public int getDistancia() {
-        return this.distancia;
+        return distancia;
     }
 
     public void setDistancia(int distancia) {
         this.distancia = distancia;
     }
 
-    public int velocidadeCarroDois() {
-
-        int velocidadeCarroDois;
-
-        while (true) {
-            setVelocidade(gv.gerarVelocidadeUm(4));
-            setDistancia(getVelocidade() + getDistancia());
-
-            velocidadeCarroDois = getDistancia();
-            return velocidadeCarroDois;
+    public void corridaIniciar() {
+        for(int i =0; i<1; i++){
+            setVelocidade(gv.gerarVelocidade());
         }
+
+
+        setDistancia(getDistancia() + getVelocidade());
     }
 
 }

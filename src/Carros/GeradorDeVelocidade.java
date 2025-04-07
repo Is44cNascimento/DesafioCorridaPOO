@@ -4,26 +4,16 @@ import java.util.Random;
 
 public class GeradorDeVelocidade {
 
-    Random gerador = new Random(1);
+    Random gerador = new Random();
 
 
     public GeradorDeVelocidade() {
     }
 
 
-    public int gerarVelocidadeUm(int bound) {
-        while(true){
-            return gerador.nextInt(4);
-        }
-
-
-    }
-    public int gerarVelocidadeDois(int bound) {
-        while(true){
-            return gerador.nextInt(bound);
-        }
-
-
+    public int gerarVelocidade() {
+        int n = gerador.nextInt(4);
+    return n;
     }
 
 }

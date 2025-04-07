@@ -6,23 +6,14 @@ public class Pista {
 
     CarroUm carroUm = new CarroUm();
     CarroDois carroDois = new CarroDois();
+
     GeradorDeVelocidade geradorDeVelocidade = new GeradorDeVelocidade();
 
     private int distanciaCarroUm;
     private int distanciaCarroDois;
 
-    public Pista() {
-    }
-
-    public Pista(int distanciaCarroUm, int distanciaCarroDois) {
-        this.distanciaCarroUm = distanciaCarroUm;
-        this.distanciaCarroDois = distanciaCarroDois;
-
-
-    }
-
     public int getDistanciaCarroUm() {
-        return this.distanciaCarroUm;
+        return distanciaCarroUm;
     }
 
     public void setDistanciaCarroUm(int distanciaCarroUm) {
@@ -30,7 +21,7 @@ public class Pista {
     }
 
     public int getDistanciaCarroDois() {
-        return this.distanciaCarroDois;
+        return distanciaCarroDois;
     }
 
     public void setDistanciaCarroDois(int distanciaCarroDois) {
@@ -38,57 +29,45 @@ public class Pista {
     }
 
 
-    public boolean verificarVencedor(int velocidadeCarroUm, int velocidadeCarroDois) {
-
-    if(velocidadeCarroUm < 30 ) {
-        return true;
-    } if(velocidadeCarroDois < 30 ) {
-        return true;
-        }
-    return false;
-
-
-    }
-    public void ativar(){
-
-        while(verificarVencedor(0, 0)){
-            carroUm.velocidadeCarroUm();
-            carroDois.velocidadeCarroDois();
-
-            setDistanciaCarroUm(carroUm.velocidadeCarroUm());
-            setDistanciaCarroDois(carroDois.velocidadeCarroDois());
-
+    public boolean parar(){
+        while(true) {
+            if (getDistanciaCarroUm() >= 30) {
+                return true;
+            }
+            if (getDistanciaCarroUm() >= 30) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
     public void frontEnd() {
-        ativar();
+
+        System.out.println("_______________________________");
+        boolean parar = parar();
+
+        while (parar == false) {
+
+                carroUm.corridaIniciar();
+                carroDois.corridaIniciar();
 
 
+                System.out.println("_______________________________");
+                for(int i = 0; i < carroUm.getDistancia(); i++){
 
-        while(verificarVencedor(carroUm.velocidadeCarroUm(),carroDois.velocidadeCarroDois())){
-            System.out.println("_______________________________");
-            for(int i = 0; i < getDistanciaCarroUm(); i++){
-
+                    System.out.print(" ");
+                }
+                System.out.println("#");
+                for(int i = 0; i < carroDois.getDistancia(); i++){
                 System.out.print(" ");
             }
-            System.out.println("#");
-            for(int i = 0; i < getDistanciaCarroDois(); i++){
-                System.out.print(" ");
+                System.out.println("#");
+
+                System.out.println("_______________________________");
+                System.out.println("");
+
             }
-            System.out.println("#");
-
-
-
-
-            System.out.println("_______________________________");
-            System.out.println("");
-        }
-
-
-
-
-
         }
 
     }
