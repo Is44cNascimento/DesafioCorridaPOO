@@ -67,6 +67,15 @@ public class Pista {
 
 
             }while (distanciaCarroDois <= 20 || distanciaCarroUm <= 20);
+
+                if(distanciaCarroUm  > distanciaCarroDois){
+                    carroUm.venceuIniciar();
+
+                }if(distanciaCarroDois > distanciaCarroUm){
+                    carroDois.venceuIniciar();
+            } if(distanciaCarroUm == distanciaCarroDois){
+                    System.out.println("EMPATE!!!");
+        }
         }
 
     }

@@ -45,4 +45,31 @@ public class CarroUm {
 
     }
 
+    public void venceuIniciar() {
+        String[] trofeu = {
+                "        . . . . . . . .        ",
+                "      . . . . . . . . . .      ",
+                "     . . . . . . . . . . .     ",
+                "    . . . .   1   . . . . .    ",
+                "     . . . . . . . . . . .     ",
+                "      . . . . . . . . . .      ",
+                "        . . . . . . . .        ",
+                "          . . . . . .          ",
+                "            . . . .            ",
+                "              . .              ",
+                "              . .              ",
+                "              . .              ",
+                "          . . . . . .          ",
+                "         . . . . . . .         ",
+                "        . . . . . . . .        ",
+                "       . . . . . . . . .       "
+        };
+
+        System.out.println("O CARRO UM venceu!!!!!!");
+        for(int i =0; i< trofeu.length; i++){
+            System.out.println(trofeu[i]);
+        }
+
+    }
+
 }
