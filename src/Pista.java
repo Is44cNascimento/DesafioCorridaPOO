@@ -32,7 +32,7 @@ public class Pista {
 
     public void frontEnd() {
 
-        System.out.println("------------------------------");
+    System.out.println("INICIANDO CORRIDA DE ASTERISCO");
         boolean parar = false;
 
         String tamanhoDaPista="------------------------------";
