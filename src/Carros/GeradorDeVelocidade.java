@@ -8,8 +8,8 @@ public class GeradorDeVelocidade {
 
 
     public GeradorDeVelocidade() {
-    }
 
+    }
 
     public int gerarVelocidade() {
         int n = gerador.nextInt(4);

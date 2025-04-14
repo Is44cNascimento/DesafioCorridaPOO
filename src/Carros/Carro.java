@@ -2,13 +2,18 @@ package Carros;
 
 
 
-public class CarroUm {
+public class Carro {
+
 
     GeradorDeVelocidade gv = new GeradorDeVelocidade();
 
     private int velocidade;
     private String venceu;
     private int distancia;
+
+    public Carro(String venceu) {
+        this.venceu = venceu;
+    }
 
     public int getVelocidade() {
         return velocidade;
@@ -65,7 +70,8 @@ public class CarroUm {
                 "       . . . . . . . . .       "
         };
 
-        System.out.println("O CARRO UM venceu!!!!!!");
+        System.out.println("O "+getVenceu()+" venceu!!!!!!");
+
         for(int i =0; i< trofeu.length; i++){
             System.out.println(trofeu[i]);
         }

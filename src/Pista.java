@@ -1,13 +1,10 @@
-import Carros.CarroDois;
-import Carros.CarroUm;
-import Carros.GeradorDeVelocidade;
+import Carros.Carro;
+
 
 public class Pista {
+    Carro carroUm = new Carro("Carro Um");
+    Carro carroDois = new Carro("carro Dois");
 
-    CarroUm carroUm = new CarroUm();
-    CarroDois carroDois = new CarroDois();
-
-    GeradorDeVelocidade geradorDeVelocidade = new GeradorDeVelocidade();
 
     private int distanciaCarroUm;
     private int distanciaCarroDois;
@@ -33,7 +30,7 @@ public class Pista {
     public void frontEnd() {
 
     System.out.println("INICIANDO CORRIDA DE ASTERISCO");
-        boolean parar = false;
+
 
         String tamanhoDaPista="------------------------------";
 
@@ -42,8 +39,16 @@ public class Pista {
                     carroUm.corridaIniciar();
                     carroDois.corridaIniciar();
 
+                    if(carroUm.getDistancia() > tamanhoDaPista.length()){
+                        carroUm.setDistancia(tamanhoDaPista.length());
+                    }
+                    if(carroDois.getDistancia() > tamanhoDaPista.length()){
+                        carroDois.setDistancia(tamanhoDaPista.length());
+                    }
+
                 System.out.println(tamanhoDaPista);
                 for(int i = 0; i < carroUm.getDistancia(); i++){
+
 
                     setDistanciaCarroUm(carroUm.getDistancia());
                     System.out.print(" ");
@@ -59,12 +64,7 @@ public class Pista {
                 System.out.println("#");
 
 
-
                 System.out.println(tamanhoDaPista + "\n");
-
-
-
-
 
             }while (distanciaCarroDois <= 20 || distanciaCarroUm <= 20);
 
