@@ -12,8 +12,8 @@ public class GeradorDeVelocidade {
     }
 
     public int gerarVelocidade() {
-        int n = gerador.nextInt(4);
-    return n;
+        int numeroGerado = gerador.nextInt(4);
+    return numeroGerado;
     }
 
 }

@@ -11,8 +11,8 @@ public class Carro {
     private String venceu;
     private int distancia;
 
-    public Carro(String venceu) {
-        this.venceu = venceu;
+    public Carro(String nomeDoCarro) {
+        this.venceu = nomeDoCarro;
     }
 
     public int getVelocidade() {
@@ -35,7 +35,7 @@ public class Carro {
         return this.distancia;
     }
 
-    public void setDistancia(int distancia) {
+    public void setDistancia(int distancia)  {
         this.distancia = distancia;
     }
 
