@@ -8,11 +8,11 @@ public class Carro {
     GeradorDeVelocidade gv = new GeradorDeVelocidade();
 
     private int velocidade;
-    private String venceu;
+    private String nomeDoCarro;
     private int distancia;
 
     public Carro(String nomeDoCarro) {
-        this.venceu = nomeDoCarro;
+        this.nomeDoCarro = nomeDoCarro;
     }
 
     public int getVelocidade() {
@@ -23,12 +23,12 @@ public class Carro {
         this.velocidade = velocidade;
     }
 
-    public String getVenceu() {
-        return this.venceu;
+    public String getNomeDocarro() {
+        return this.nomeDoCarro;
     }
 
-    public void setVenceu(String venceu) {
-        this.venceu = venceu;
+    public void setNomeDoCarro(String nomeDoCarro) {
+        this.nomeDoCarro = nomeDoCarro;
     }
 
     public int getDistancia() {
@@ -41,16 +41,11 @@ public class Carro {
 
 
     public void corridaIniciar() {
-        for(int i =0; i<1; i++){
-            setVelocidade(gv.gerarVelocidade());
-        }
-
-
+        setVelocidade(gv.gerarVelocidade());
         setDistancia(getDistancia() + getVelocidade());
-
     }
 
-    public void venceuIniciar() {
+    public void vencedor() {
         String[] trofeu = {
                 "        . . . . . . . .        ",
                 "      . . . . . . . . . .      ",
@@ -70,7 +65,7 @@ public class Carro {
                 "       . . . . . . . . .       "
         };
 
-        System.out.println("O "+getVenceu()+" venceu!!!!!!");
+        System.out.println("O "+ getNomeDocarro() +" venceu!!!!!!");
 
         for(int i =0; i< trofeu.length; i++){
             System.out.println(trofeu[i]);

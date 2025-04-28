@@ -6,14 +6,9 @@ public class GeradorDeVelocidade {
 
     Random gerador = new Random();
 
-
-    public GeradorDeVelocidade() {
-
-    }
-
     public int gerarVelocidade() {
-        int numeroGerado = gerador.nextInt(4);
-    return numeroGerado;
+        int numeroGerado = gerador.nextInt(3) + 1;
+        return numeroGerado;
     }
 
 }
